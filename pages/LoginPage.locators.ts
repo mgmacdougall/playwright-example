@@ -1,3 +1,3 @@
 export const LoginPageLocators = {
-    sample: { value: '.foo' }
+  sample: { value: '.foo' },
 };
