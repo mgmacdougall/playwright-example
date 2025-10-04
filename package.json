@@ -1,0 +1,45 @@
+{
+  "name": "playwright",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:smoke": "playwright test --config=playwright.config.ts",
+    "test:smoke:headed": "playwright test --config=playwright.config.ts --headed",
+    "test:smoke:debug": "pwsh -NoLogo -NoProfile -ExecutionPolicy Bypass -Command \"npx playwright test --config=playwright.config.ts --debug\"",
+    "test:smoke:report": "npx playwright show-report",
+    "test:smoke:report:open": "npx playwright show-report playwright-report",
+    "test:smoke:report:ci": "npx playwright show-report test-results",
+    "lint": "eslint . --config eslint.config.ts --ext .ts,.tsx",
+    "lint:fix": "eslint . --config eslint.config.ts --ext .ts,.tsx --fix",
+    "lint:report": "eslint . --config eslint.config.ts --ext .ts,.tsx --format json --output-file reports/eslint-report.json",
+    "format": "prettier --write \"src/**/*.{ts,tsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,json,md}\"",
+    "format:list": "prettier \"**/*.{ts,tsx,json,md}\" --list-different --log-level debug",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "@types/node": "^24.6.2",
+    "@typescript-eslint/eslint-plugin": "^8.45.0",
+    "@typescript-eslint/parser": "^8.45.0",
+    "eslint": "^9.37.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "husky": "^8.0.3",
+    "jiti": "^2.6.1",
+    "playwright": "^1.55.1",
+    "prettier": "^3.6.2",
+    "prettier-plugin-organize-imports": "^4.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.45.0"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.55.1"
+  }
+}
