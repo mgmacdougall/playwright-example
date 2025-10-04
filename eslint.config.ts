@@ -8,7 +8,14 @@ export default [
 
   {
     files: ['**/*.ts', '**/*.tsx'],
-    ignores: ['node_modules/**', 'dist/**', 'coverage/**', '**/*.d.ts', '*.config.ts', '.github/copilot-instructions.md'],
+    ignores: [
+      'node_modules/**',
+      'dist/**',
+      'coverage/**',
+      '**/*.d.ts',
+      '*.config.ts',
+      '.github/copilot-instructions.md',
+    ],
     languageOptions: {
       parser: tseslint.parser,
       parserOptions: {
