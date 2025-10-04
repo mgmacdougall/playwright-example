@@ -1,51 +1,34 @@
-import typescript from '@eslint/js';
-import tseslint, { plugin } from 'typescript-eslint';
+import prettier from 'eslint-config-prettier';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
+import tseslint from 'typescript-eslint';
 
 export default [
-    // Base JavaScript rules
-    typescript.configs.recommended,
+  ...tseslint.configs.recommended,
+  ...tseslint.configs.strict,
 
-    // TypeScript-specific rules
-    ...tseslint.configs.recommended,
-    ...tseslint.configs.strict,
-
-    // Custom project rules
-    {
-        files: ['**/*.ts', '**/*.tsx'],
-        languageOptions: {
-            parser: tseslint.parser,
-            parserOptions: {
-                project: ['./tsconfig.json'],
-            },
-        },
-        plugins: {
-            '@typescript-eslint': plugin,
-            'prettier': eslintPluginPrettier,
-        },
-        rules: {
-            '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
-            '@typescript-eslint/explicit-function-return-type': 'off',
-            'no-console': 'warn',
-            'eqeqeq': ['error', 'smart'],
-            'prettier/prettier': 'warn',
-        },
+  {
+    files: ['**/*.ts', '**/*.tsx'],
+    ignores: ['node_modules/**', 'dist/**', 'coverage/**', '**/*.d.ts', '*.config.ts', '.github/copilot-instructions.md'],
+    languageOptions: {
+      parser: tseslint.parser,
+      parserOptions: {
+        project: ['./tsconfig.json'],
         sourceType: 'module',
-        extends: [
-            'plugin:@typescript-eslint/recommended',
-            'plugin:@typescript-eslint/recommended-requiring-type-checking',
-            'plugin:prettier/recommended',
-            "google",
-            "prettier"
-        ],
+        ecmaVersion: 2020,
+      },
     },
+    plugins: {
+      prettier: eslintPluginPrettier,
+    },
+    rules: {
+      'prettier/prettier': 'warn',
+      '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+      '@typescript-eslint/no-unused-expressions': 'off',
+      '@typescript-eslint/explicit-function-return-type': 'off',
+      'no-console': 'warn',
+      // 'eqeqeq': ['error', 'smart'],
+    },
+  },
 
-    // Overrides for test files
-    {
-        files: ['**/*.test.ts', '**/*.spec.ts'],
-        rules: {
-            '@typescript-eslint/no-explicit-any': 'off',
-            'no-console': 'off',
-        },
-    },
+  prettier,
 ];

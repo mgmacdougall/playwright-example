@@ -1,0 +1,17 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+npm run check-types ||(
+    echo "TypeScript type check failed. Commit aborted."
+    exit 1
+)
+npm run lint || (
+    echo "ESLint check failed. Commit aborted."
+    exit 1
+) 
+npm run format:check || (
+    echo "Prettier check failed. Commit aborted."
+    exit 1
+)
+
+echo "All checks passed. Proceeding with commit."

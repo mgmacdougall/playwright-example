@@ -9,16 +9,18 @@ A modular, scalable end-to-end testing framework built on [Microsoft Playwright]
 - 📸 Auto screenshots on failure (enabled)
 - 📊 HTML and JSON reporting (enabled - results will show after each run)
 - 🔐 Built-in authentication flows (not completed)
-- 🧱 Modular test structure for maintainability 
-    
+- 🧱 Modular test structure for maintainability
+
 ## 📦 Installation
 
 ```bash
 npm install
 npx playwright install
 ```
+
 Project Structure
-```
+
+````
 .
 ├── configs                     # ENV specific config files
 │   ├── prod.json
@@ -44,15 +46,14 @@ Project Structure
 ├── playwright.config.ts            # Global config for playwright
 ├── ts.config.ts                    # ts config file
 └── README.md
-```
+````
+
 Directory details:
+
 - fixtures - where the POMs are tied together, to enable them to be used
-    in all test cases
-    - configs - hold configuration for various test environments 
-        - the current example shows how to use for prod.
-        - contains base url, and other settings (time outs etc.)
-    - 
-Current Configurations:
+  in all test cases - configs - hold configuration for various test environments - the current example shows how to use for prod. - contains base url, and other settings (time outs etc.) -
+  Current Configurations:
+
 ```
 use: {
   headless: true,
@@ -61,14 +62,16 @@ use: {
   trace: 'retain-on-failure',
 }
 ```
+
 To Run all tests:
+
 ```
 # Run all tests
 npx playwright test             // runs test in headless mode.
 npx playwright test --debug     // runs debug mode
 npx playwright test --headed    // runs test case in headed mode
 npx playwright show-report      // shows html report for last run, configured to show by default
-npx playwright test --ui        //shows UI for debugging 
+npx playwright test --ui        //shows UI for debugging
 
 # Run specific file
 npx playwright test tests/login.spec.ts
