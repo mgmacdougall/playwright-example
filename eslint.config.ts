@@ -15,6 +15,13 @@ export default [
       '**/*.d.ts',
       '*.config.ts',
       '.github/copilot-instructions.md',
+      '.github/**/*.md',
+      'reports/**',
+      'test-results/**',
+      'playwright-report/**',
+      'eslint-report.json',
+      'tsconfig.json',
+      'tsconfig.*.json',
     ],
     languageOptions: {
       parser: tseslint.parser,
