@@ -22,6 +22,12 @@ export default [
       'eslint-report.json',
       'tsconfig.json',
       'tsconfig.*.json',
+      '*.md',
+      'README.md',
+      '.prettierrc',
+      '.prettierignore',
+      '.eslintrc.js',
+      'eslint.config.ts',
     ],
     languageOptions: {
       parser: tseslint.parser,
