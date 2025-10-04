@@ -28,6 +28,7 @@ export default [
       '.prettierignore',
       '.eslintrc.js',
       'eslint.config.ts',
+      'test-results/**',
     ],
     languageOptions: {
       parser: tseslint.parser,
