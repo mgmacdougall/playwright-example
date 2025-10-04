@@ -1,3 +1,3 @@
 export const homePageLocators = {
-    gettingStarted: { value: '.getStarted_Sjon' }
+  gettingStarted: { value: '.getStarted_Sjon' },
 };
