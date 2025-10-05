@@ -148,3 +148,26 @@ The pre-commit checks are completed in the following order:
 If all three pre-commit tests pass, then the commit can proceed, otherwise the commit
 will inform the developer of the problems.  No codde is changed in the commit so the 
 developer can make changes.
+
+
+
+## DEV Environment setup
+The test dev environment is focused solely on utilizing VSCode as the IDE, current there
+are no intentions of supporting other IDE's at the moment.
+
+VSCode is the primary development environment along with certain Playwright Plugins installed.
+The other depedency is that Git be installed.
+
+### Development Environment setup
+Install and Config Steps:
+1. Download and install VSCode
+2. Download and install Git if required (on most machines this is pre done.)
+3. GIT clone the repo
+4. Open VSCode
+5. Open the 'Extensions' view.
+6. Search and install the following plugins:
+    - ESlint 
+    - Prettier Code formatter
+    - Playwright for VsCode
+
+
