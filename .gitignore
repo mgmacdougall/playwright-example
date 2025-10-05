@@ -3,3 +3,8 @@ dist
 reports
 package-lock.json
 test-results/
+.vscode
+.env
+.env.local
+*.html
+index.html
