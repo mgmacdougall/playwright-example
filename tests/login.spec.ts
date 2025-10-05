@@ -1,12 +1,13 @@
 // @ts-check
 import { test } from '../fixtures/base';
 
-test.describe('Main page tests', () => {
-  test('Launch main page', async ({ homePage }) => {
-    await homePage.navigate(); // Navigate to the login page
-    await homePage.clickGetStarted();
-
-    test.info().title === 'Launch main page';
-    // await loginPage.login('invalidUser', 'invalidPass'); // Attempt to login with invalid credentials
-  });
+test('E2E Soke Test', async ({ homePage, loginPage }) => {
+  await homePage.navigate();
+  await homePage.validatePageTItle(
+    'Playwright enables reliable end-to-end testing for modern web apps.'
+  );
+  // await homePage.clickLink('API');
+  // await homePage.waitForPageLoad();
+  // await homePage.validatePageTItle('Playwright API');
+  // await loginPage.getErrorMessage();
 });
